@@ -5045,7 +5045,8 @@ a {
         font-size: 5em;
         opacity: 1;
         position: absolute;
-        bottom: 50%; }
+        bottom: 50%;
+        z-index: 10; }
       .nocturne .grid .art p {
         position: relative;
         left: 50%;
@@ -5054,9 +5055,30 @@ a {
         transform: translateX(-50%);
         opacity: 1;
         position: absolute;
-        bottom: 0%; }
-      .nocturne .grid .art > img {
-        z-index: -1; }
+        bottom: 0%;
+        z-index: 10; }
+      .nocturne .grid .art .wrapper {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+        width: 100%;
+        -webkit-transition: -webkit-transform 1s ease;
+        transition: transform 1s ease; }
+        .nocturne .grid .art .wrapper img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1; }
+        .nocturne .grid .art .wrapper.active {
+          -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+          -webkit-transition: -webkit-transform 1s ease;
+          transition: transform 1s ease; }
       .nocturne .grid .art .overlay {
         background: rgba(0, 0, 0, 0.75);
         height: 100%;
@@ -5073,6 +5095,7 @@ a {
         -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
         transform: translateX(-50%);
+        opacity: 0;
         position: absolute;
         top: 50%;
         z-index: 10; }
@@ -5087,16 +5110,17 @@ a {
         bottom: 80%;
         -webkit-transition: all 0.5s ease;
         transition: all 0.5s ease; }
-      .nocturne .grid .art.active p {
+      .nocturne .grid .art.active .wrapper p {
         opacity: 0;
         bottom: 5%;
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease; }
-      .nocturne .grid .art.active .overlay {
+      .nocturne .grid .art.active .wrapper .overlay {
         background: rgba(30, 30, 30, 0);
         -webkit-transition: background 0.3s ease;
         transition: background 0.3s ease; }
       .nocturne .grid .art.active .text {
+        opacity: 1;
         -webkit-animation: bounce 1s ease;
         animation: bounce 1s ease;
         -webkit-animation-fill-mode: forwards;
