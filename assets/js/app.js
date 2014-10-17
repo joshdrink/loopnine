@@ -28,9 +28,9 @@
             var res = parseInt(event.data);
 
             if(res > 0 && res < 10){
-                $('#' + res).removeClass('secondary').addClass('success');
+                $('#data-grid-id' + res).removeClass('secondary').addClass('success');
             }else if(res < 0 && res > -10){
-                $('#' + (res*-1)).removeClass('success').addClass('secondary');
+                $('#data-grid-id' + (res*-1)).removeClass('success').addClass('secondary');
             }
         }
 
