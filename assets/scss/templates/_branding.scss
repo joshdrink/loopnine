@@ -1,0 +1,32 @@
+// Maintenance Template / 2014 ---------------------------------------
+
+	// Authored by: Josh Beveridge @ Norex
+	// 2014/09
+
+// Branding ----------------------------------------------------------
+
+	// Base Palette
+		$white: rgba(255,255,255,1);
+		$grey: rgba(200,200,200,1);
+		$black: rgba(30,30,30,1);
+
+	// Norex Palette
+		$magenta: rgba(213,30,73,1);
+		$maroon: rgba(102,36,43,1);
+
+	// Wordpress
+		$navy: rgba(0,108,138,1);
+
+// Media Queries -----------------------------------------------------
+
+	// Tablet (Portrait) --------------------------------------------
+
+		// @media #{$medium-up} {}
+
+	// Tablet (Landscape) -------------------------------------------
+
+		// @media screen and (min-width:950px) {}
+
+	// Fallback -----------------------------------------------------
+
+		// @media #{$large-up} {}

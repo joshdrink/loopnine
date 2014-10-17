@@ -1,0 +1,55 @@
+// Maintenance Template / 2014 ---------------------------------------
+
+	// Authored by: Josh Beveridge @ Norex
+	// 2014/09
+
+// Typography --------------------------------------------------------
+
+	// Norex Fonts
+		@mixin font-raleway {
+			font-family: 'Raleway', sans-serif;
+		}
+
+	// Headings
+		h1, h2, h3, h4, h5 {
+			@include font-raleway;
+			color: $white;
+			font-size: 2em;
+			font-weight: 500;
+		}
+
+		h2 {
+			font-size: 1.5em;
+		}
+
+	// Copy
+		p, a, ul, li {
+			color: $white;
+			font-size: 1em;
+			font-weight: 300;
+		}
+
+		a {
+			color: $maroon;
+			transition: color 0.3s ease;
+
+			&:hover {
+				color: $white;
+				transition: color 0.3s ease;
+			}
+
+		}
+
+// Media Queries -----------------------------------------------------
+
+	// Tablet (Portrait) --------------------------------------------
+
+		// @media #{$medium-up} {}
+
+	// Tablet (Landscape) -------------------------------------------
+
+		// @media screen and (min-width:950px) {}
+
+	// Fallback -----------------------------------------------------
+
+		// @media #{$large-up} {}

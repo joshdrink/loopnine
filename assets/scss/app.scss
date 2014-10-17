@@ -1,0 +1,150 @@
+// Maintenance Template / 2014 ---------------------------------------
+
+	// Authored by: Josh Beveridge @ Norex
+	// 2014/10
+
+// Imports -----------------------------------------------------------
+
+	// Make sure the charset is set appropriately
+	@charset "UTF-8";
+
+	// Global Foundation Settings
+	@import "foundation/settings";
+
+	// You can import only specific elements by adjusting the import below
+	@import "foundation";
+
+// Default Settings --------------------------------------------------
+
+	// Viewport Display
+		.mobile-display {
+			display: block !important;
+		}
+
+		.desktop-display {
+			display: none !important;
+		}
+
+	// Containers
+		.container {
+			margin: 0 auto 0 auto;
+			max-width: 1000px !important;
+		}
+
+		.row {
+			max-width: 800px !important;
+		}
+
+		.viewport-container {
+			height: 100%;
+			overflow: hidden;
+			position: relative;
+			width: 100%;
+		}
+
+		.wrapper {
+			position: relative;
+		}
+
+	// Positioning
+		@mixin center {
+			position: relative;
+				top: 50%;
+				left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		@mixin horcenter {
+			position: relative;
+				left: 50%;
+			transform: translateX(-50%);
+		}
+
+		@mixin vercenter {
+			position: relative;
+				top: 50%;
+			transform: translateY(-50%);
+		}
+
+// Style Clear -------------------------------------------------------
+
+	*,
+	*:before,
+	*:after {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	html, body {
+		height: 100%;
+		width: 100%;
+	}
+
+	body {
+		overflow-x: hidden;
+	}
+
+	ul, ol {
+		list-style: none;
+		margin: 0;
+	}
+
+// Branding ----------------------------------------------------------
+
+	@import "templates/branding.scss";
+
+// Typography & Forms ------------------------------------------------
+
+	// Typography
+		@import "templates/typography.scss";
+
+	// Forms
+		// @import "template/form.scss";
+
+// Site Structure ----------------------------------------------------
+
+	// Mobile Header
+		// @import "modules/header_mobile.scss";
+
+	// Desktop Header
+		// @import "modules/header_desktop.scss";
+
+	// Footer
+		// @import "modules/footer.scss";
+
+	// Archive
+		@import "modules/archive.scss";
+
+// Single Pages ------------------------------------------------------
+
+	// Template
+		@import "pages/grid.scss";
+
+// Media Queries -----------------------------------------------------
+
+	// Phone ----------------------------------------------------------
+
+		@media #{$small-only} {}
+
+	// Phone (Landscape) ----------------------------------------------
+
+		@media screen and (min-width:640px) and (max-width:767px) {}
+
+	// Tablet ---------------------------------------------------------
+
+		@media #{$medium-up} {
+
+			.mobile-display {
+				display: none !important;
+			}
+
+			.desktop-display {
+				display: block !important;
+			}
+
+		}
+
+	// Fallback -------------------------------------------------------
+
+		@media #{$large-up} {}

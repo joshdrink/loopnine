@@ -1,0 +1,145 @@
+// Maintenance Template / 2014 ---------------------------------------
+
+	// Authored by: Josh Beveridge @ Norex
+	// 2014/09
+
+// Archive -----------------------------------------------------------
+
+	.archive {
+		background: $maroon;
+		border-radius: 100px;
+		box-shadow: 0 0 6px $black;
+		cursor: pointer;
+		max-height: 75px;
+		margin: 0;
+		position: fixed;
+			right: 40px;
+			bottom: 30px;
+		width: 75px;
+		z-index: 100;
+		transition: border-radius 0.3s ease 0.3s, max-height 0.3s ease 0.3s, width 0.3s ease 0.3s;
+
+		// &:after {
+		// 	color: $white;
+		// 	content: "\f0c9";
+		// 	display: inline-block;
+		// 	font-family: FontAwesome !important;
+		// 	font-style: normal;
+		// 	font-size: 2.5em;
+		// 	font-weight: normal;
+		// 	line-height: 1;
+		// 	position: absolute;
+		// 		top: 17px;
+		// 		left: 20px;
+		// 	-webkit-font-smoothing: antialiased;
+		// 	-moz-osx-font-smoothing: grayscale;
+		// 	transition: opacity 0.3s ease 0.6s;
+		// }
+
+		dt, dd {
+			color: $white;
+			opacity: 0;
+			margin: 0 0 0 20px;
+			transition: opacity 0.3s ease;
+		}
+
+		dt {
+			border-bottom: 1px solid $white;
+			margin: 0 20px 10px 20px;
+			padding: 0 0 10px 0;
+		}
+
+		dd {
+
+			a {
+				color: $white;
+				transition: all 0.2s ease;
+
+				&:hover {
+					color: $magenta;
+					transition: all 0.2s ease;
+				}
+
+			}
+
+		}
+
+		dt:first-of-type {
+			padding: 20px 0 10px 0;
+		}
+		dt:not(:first-of-type) {
+			margin: 30px 20px 10px 20px;
+		}
+
+		dd:last-child {
+			padding: 0 0 20px 0;
+		}
+
+		.open {
+			cursor: pointer;
+			font-size: 2.5em;
+			height: 100%;
+			margin: 0;
+			opacity: 1;
+			position: absolute;
+				top: 0;
+				left: 0;
+			transition: opacity 0.3s ease 0.6s;
+			width: 100%;
+			z-index: 1000;
+
+				>i {
+					position: absolute;
+						top: 18px;
+						left: 20px;
+				}
+
+		}
+
+		.close {
+			cursor: pointer;
+			position: absolute;
+				top: 10px;
+				right: 15px;
+		}
+
+		&.active {
+			border-radius: 0px;
+			cursor: default;
+			max-height: 500px;
+			transition: border-radius 0.1s ease 0.3s, max-height 0.3s ease 0.3s, width 0.3s ease 0.3s;
+			width: 200px;
+
+			// &:after {
+			// 	opacity: 0;
+			// 	transition: opacity 0.3s ease;
+			// }
+
+			dt, dd {
+				opacity: 1;
+				transition: opacity 0.3s ease 0.6s;
+			}
+
+			.open {
+				height: 0;
+				opacity: 0;
+				transition: opacity 0.3s ease, height 0s ease 0.3s;
+			}
+
+		}
+
+	}
+
+// Media Queries -----------------------------------------------------
+
+	// Tablet (Portrait) --------------------------------------------
+
+		// @media #{$medium-up} {}
+
+	// Tablet (Landscape) -------------------------------------------
+
+		// @media screen and (min-width:950px) {}
+
+	// Fallback -----------------------------------------------------
+
+		// @media #{$large-up} {}

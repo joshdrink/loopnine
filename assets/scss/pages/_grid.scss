@@ -1,0 +1,146 @@
+// Nocturne Dance Grid / 2014 --------------------------------------------------
+
+	// Authored by: Josh Beveridge @ Norex
+	// 2014/10
+
+// Grid ------------------------------------------------------------------------
+
+	.nocturne {
+		background: $black;
+
+		.menu {
+			height: 100%;
+			position: absolute;
+				top: 0;
+				left: 0;
+			text-align: center;
+
+			>img {
+				position: absolute;
+					left: 50%;
+					bottom: 10%;
+				transform: translatex(-50%);
+				width: 75%;
+			}
+
+		}
+
+		.grid {
+			box-shadow: -10px 0 20px -10px rgba(0,0,0,.75);
+			height: 100%;
+			position: absolute;
+				top: 0;
+				right: 0;
+
+			.art {
+				background: $magenta;
+				height: 100%;
+
+				h1 {
+					@include horcenter;
+					font-size: 5em;
+					opacity: 1;
+					position: absolute;
+						bottom: 50%;
+				}
+
+				p {
+					@include horcenter;
+					opacity: 1;
+					position: absolute;
+						bottom: 0%;
+				}
+
+				>img {
+					z-index: -1;
+				}
+
+				.overlay {
+					background: rgba(0,0,0,.75);
+					height: 100%;
+					opacity: 1;
+					position: absolute;
+						top: 0;
+						left: 0;
+					transition: background 0.8s ease;
+					width: 100%;
+				}
+
+				.text {
+					@include horcenter;
+					position: absolute;
+						top: 50%;
+					z-index: 10;
+				}
+
+				.wrapper {
+					height: 100%;
+					position: absolute;
+						top: 0;
+						left: 0;
+					width: 100%;
+				}
+
+				&.active {
+
+					h1 {
+						opacity: 0;
+							bottom: 80%;
+						transition: all 0.5s ease;
+					}
+
+					p {
+						opacity: 0;
+							bottom: 5%;
+						transition: all 0.3s ease;
+					}
+
+					.overlay {
+						background: rgba(30,30,30,0);
+						transition: background 0.3s ease;
+
+					}
+
+					.text {
+						animation: bounce 1s ease;
+						animation-fill-mode: forwards;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	// Animations
+
+		@keyframes bounce {
+			0% {
+				opacity: 0;
+				top: 50%;
+			};
+			80% {
+				opacity: 1;
+				top: 0%;
+			};
+			100% {
+				opacity: 0;
+				top: 0%;
+			};
+		}
+
+// Media Queries ---------------------------------------------------------------
+
+	// Tablet (Portrait) -------------------------------------------------------
+
+		// @media #{$medium-up} {}
+
+	// Tablet (Landscape) ------------------------------------------------------
+
+		// @media screen and (min-width:950px) {}
+
+	// Fallback ----------------------------------------------------------------
+
+		// @media #{$large-up} {}

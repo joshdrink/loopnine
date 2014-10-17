@@ -1,0 +1,64 @@
+// Maintenance Template / 2014 ---------------------------------------
+
+	// Authored by: Josh Beveridge @ Norex
+	// 2014/10
+
+// Print Style -------------------------------------------------------
+
+	.maintenance {
+
+		.google {
+
+			.seo {
+
+				.small-4 {
+					width: 33% !important;
+				}
+
+			}
+
+		}
+
+		.broken-links {
+
+			.small-6 {
+				width: 50% !important;
+			}
+
+		}
+
+		.w3c {
+
+			.medium-4 {
+				width: 33% !important;
+			}
+
+			.medium-8 {
+				width: 66% !important;
+			}
+
+		}
+
+		.wordpress {
+
+			.medium-6 {
+				width: 50% !important;
+			}
+
+		}
+
+	}
+
+// Media Queries -----------------------------------------------------
+
+	// Tablet (Portrait) --------------------------------------------
+
+		// @media #{$medium-up} {}
+
+	// Tablet (Landscape) -------------------------------------------
+
+		// @media screen and (min-width:950px) {}
+
+	// Fallback -----------------------------------------------------
+
+		// @media #{$large-up} {}
