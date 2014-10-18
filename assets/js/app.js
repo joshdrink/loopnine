@@ -110,7 +110,7 @@
         for (var i = 0; i < switchQueue.length; ++i) { switchQueue[i] = false; }
         var hasFlipped = new Array(9);
         for (var i = 0; i < switchQueue.length; ++i) { switchQueue[i] = false; }
-        this.listLength = 9;
+        this.listLength = 11;
         this.cued_loops = 0;
         this.loops = [];
 
@@ -234,12 +234,52 @@
             }
         }
 
+        function pickLoop(grid_id){
+            if(grid_id < 7){
+                theLoop = Math.round(Math.random() * groupALength) +1;
+                if($('.wrapper[data-loop="'+groupA[theLoop].name+'"').length){
+                    for(i=theLoop;i<groupALength;i++){
+                        if(!$('.wrapper[data-loop="'+groupA[theLoop].name+'"').length){
+                            return groupA[i];
+                        }
+                    }
+                    for(i=0;i<theLoop;i++){
+                        if(!$('.wrapper[data-loop="'+groupA[theLoop].name+'"').length){
+                            return groupA[i];
+                        }
+                    }
+                }else{
+                    return groupA[theLoop];
+                }
+            }else{
+                theLoop = Math.round(Math.random() * groupBLength) +1;
+                if($('.wrapper[data-loop="'+groupB[theLoop].name+'"').length){
+                    for(i=theLoop;i<groupBLength;i++){
+                        if(!$('.wrapper[data-loop="'+groupB[theLoop].name+'"').length){
+                            return groupB[i];
+                        }
+                    }
+                    for(i=0;i<theLoop;i++){
+                        if(!$('.wrapper[data-loop="'+groupB[theLoop].name+'"').length){
+                            return groupB[i];
+                        }
+                    }
+                }else{
+                    return groupB[theLoop];
+                }
+            }
+        }
+
         (function switchLoop(){
-            var timeout = Math.round(Math.random() * 70) + 21; //20-90
+            var timeout = (Math.round(Math.random() * 70) + 21)*1000; //20-90
+            console.log("setting Timeout " + timeout);
             setTimeout(function() {
                 var grid_id = pickSwitch();
-                if()
-                prepareSwitch(grid_id);
+                var theLoop = pickLoop(grid_id);
+
+                prepareSwitch(grid_id, theLoop);
+                performSwitch(grid_id);
+                console.log("Switching " + grid_id + " to " + theLoop.name);
                 switchLoop();
             }, timeout);
         }());

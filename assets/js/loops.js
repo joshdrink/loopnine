@@ -373,8 +373,21 @@ loopList = {
         name: 'loop9',
         song: song.nightmare,
         url: '9-1.wav'
+    },
+    loop10:{
+        name: 'loop10',
+        song: song.wantToBelieve,
+        url: 'mns1.wav'
+    },
+    loop11:{
+        name: 'loop11',
+        song: song.strongIntuition,
+        url: 'mns2.wav'
     }
 }
 
-groupA = [loopList.loop1, loopList.loop2, loopList.loop3, loopList.loop4, loopList.loop5, loopList.loop6];
-groupB = [loopList.loop7, loopList.loop8, loopList.loop9];
+groupA = [loopList.loop1, loopList.loop2, loopList.loop3, loopList.loop4, loopList.loop5, loopList.loop6, loopList.loop11];
+groupB = [loopList.loop7, loopList.loop8, loopList.loop9, loopList.loop10];
+
+groupALength = 6;
+groupBLength = 3;
