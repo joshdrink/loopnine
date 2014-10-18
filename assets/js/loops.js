@@ -1,7 +1,7 @@
 album = {
     aaWallace: {
         name: 'unreleased',
-        art: '',
+        art: ''
     },
     aatwlwm: {
         name: '',
@@ -9,71 +9,71 @@ album = {
     },
     thePhantomMoves: {
         name: 'The Phantom Moves',
-        art: 'Alert The Medic.jpg',
+        art: 'Alert The Medic.jpg'
     },
     soLongAtTheFair: {
         name: 'So Long At The Fair',
-        art: 'Anne Janelle.jpg',
+        art: 'Anne Janelle.jpg'
     },
     nightmareSingle: {
         name: 'Nightmare (Single)',
-        art: 'Bloody Diamonds.jpg',
+        art: 'Bloody Diamonds.jpg'
     },
     cannon: {
         name: 'Cannon',
-        art: 'Cam Smith.jpg',
+        art: 'Cam Smith.jpg'
     },
     youngBlood: {
         name: 'Young Blood',
-        art: 'Chris Martin.jpg',
+        art: 'Chris Martin.jpg'
     },
     doItAllAgainSingle: {
         name: 'Do It All Again (Single)',
-        art: 'Dylan Guthro.jpg',
+        art: 'Dylan Guthro.jpg'
     },
     brokenDownHorse: {
         name: 'Broken Down Horse',
-        art: 'E.B. Anderson.jpg',
+        art: 'E.B. Anderson.jpg'
     },
     soLongEP: {
         name: 'So Long EP',
-        art: 'Glory Glory.jpg',
+        art: 'Glory Glory.jpg'
     },
     conversationalist: {
         name: 'Conversationalist',
-        art: 'In-Flight Safety.jpg',
+        art: 'In-Flight Safety.jpg'
     },
     decisions: {
         name: 'Act II: Decisions',
-        art: 'Jessie Brown.jpg',
+        art: 'Jessie Brown.jpg'
     },
     theGreatUpheavel: {
         name: 'The Great Upheavel',
-        art: '',
+        art: ''
     },
     handsSingle: {
         name: 'Hands (Single)',
-        art: 'Like A Motorcycle.jpg',
+        art: 'Like A Motorcycle.jpg'
     },
     yourLastWar: {
         name: 'Your Last War',
-        art: 'Heather Green.png',
+        art: 'Heather Green.png'
     },
     mineForTheSummertimeSingle: {
         name: 'Mine For The Summertime',
-        art: 'Kyle Mischiek.jpg',
+        art: 'Kyle Mischiek.jpg'
     },
     maryBethDeSceneAlbum:{
         name: 'Mary Beth de Scène',
-        art: 'Mary Beth de Scène.JPG',
+        art: 'Mary Beth de Scène.JPG'
     },
     summertimeWinSingle:{
         name: 'Summertime Win (Single)',
-        art: 'Quake Matthews.jpg',
+        art: 'Quake Matthews.jpg'
     },
     ephemeral: {
         name: 'Ephemeral',
-        art: 'Rich Aucoin.jpg',
+        art: 'Rich Aucoin.jpg'
     }
 };
 artist = {
@@ -239,12 +239,12 @@ song = {
     graceComeBack: {
         name: 'Grace Come Back',
         album: album.thePhantomMoves,
-        artist: artist.aatwlwm
+        artist: artist.alertTheMedic
     },
     blackIsTheColour: {
         name: 'Black Is The Colour',
         album: album.soLongAtTheFair,
-        artist: artist.alertTheMedic
+        artist: artist.annaJanelle
     },
     nightmare: {
         name: 'Nightmare',
@@ -328,36 +328,45 @@ song = {
     }
 };
 
-loop = {
+loopList = {
     loop1: {
-        song: song.henri
+        song: song.henri,
+        url: '1-1.wav'
     },
     loop2: {
-        song: song.blackIsTheColour
+        song: song.blackIsTheColour,
+        url: '2-4.wav'
     },
     loop3: {
-        song: song.graceComeBack
+        song: song.graceComeBack,
+        url: '3-2.wav'
     },
     loop4: {
-        song: song.dayIWasBorn
+        song: song.dayIWasBorn,
+        url: '4-1.wav'
     },
     loop5: {
-        song: song.doItAllAgain
+        song: song.doItAllAgain,
+        url: '5-1.wav'
     },
     loop6: {
-        song: song.hands
+        song: song.hands,
+        url: '6-4.wav'
     },
     loop7: {
-        song: song.mineForTheSummertime
+        song: song.mineForTheSummertime,
+        url: '7-1.wav'
     },
     loop8: {
-        song: song.moveYourFeet
+        song: song.moveYourFeet,
+        url: '8-4.wav'
     },
     loop9: {
-        song: song.nightmare
+        song: song.nightmare,
+        url: '9-1.wav'
     }
 }
 
-groupA = [loop.loop1, loop.loop2, loop.loop3, loop.loop4, loop.loop5, loop.loop6];
+groupA = [loopList.loop1, loopList.loop2, loopList.loop3, loopList.loop4, loopList.loop5, loopList.loop6];
 
-groupC = [loop.loop7, loop.loop8, loop.loop9];
+groupC = [loopList.loop7, loopList.loop8, loopList.loop9];
