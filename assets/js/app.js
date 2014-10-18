@@ -43,12 +43,17 @@
             alert('Web Audio API is not supported in this browser');
         }
 
-        $('.art').on('click', function(e){
-            parent = $(e.target).closest('.art');
-           if(parent.hasClass('active'))
-                deactivate(parent.data("grid-id"));
-            else
-                activate(parent.data("grid-id"));
+        $('.art').on('mousedown', function(e){
+            if(e.button == 2){
+                e.preventDefault();
+                performSwitch(2);
+            }else {
+                parent = $(e.target).closest('.art');
+                if (parent.hasClass('active'))
+                    deactivate(parent.data("grid-id"));
+                else
+                    activate(parent.data("grid-id"));
+            }
         });
 
         function activate(num){
@@ -58,7 +63,7 @@
             else
                 $('.art[data-grid-id="'+num+'"]').append("<img class='text' src='/assets/img/text_"+text+".png'>");
             $('.art[data-grid-id="'+num+'"]').addClass('active');
-            var l = $('.art[data-grid-id="'+num+'"]').data('loop');
+            var l = $('.art[data-grid-id="'+num+'"] .wrapper.active').data('loop');
             loopList[l].object.volume = 1;
             loopList[l].object.gainNode.gain.value = 1;
         }
@@ -67,21 +72,22 @@
             abs = Math.abs(num);
             $('.art[data-grid-id="'+abs+'"] .text').remove();
             $('.art[data-grid-id="'+abs+'"]').removeClass('active');
-            var l = $('.art[data-grid-id="'+abs+'"]').data('loop');
+            var l = $('.art[data-grid-id="'+abs+'"] .wrapper.active').data('loop');
             loopList[l].object.volume = 0;
             loopList[l].object.gainNode.gain.value = 0;
+            checkQueue(abs);
         }
 
         function chooseLoops(){
             for(var i=1; i<=6; i++){
-                $('.art[data-grid-id="'+i+'"] .wrapper img').attr('src', '/assets/img/' + groupA[i-1].song.album.art);
-                $('.art[data-grid-id="'+i+'"] .wrapper p').text('@' + groupA[i-1].song.artist.twitter);
-                $('.art[data-grid-id="'+i+'"]').data('loop', 'loop' + i);
+                $('.art[data-grid-id="'+i+'"] .wrapper.active img').attr('src', '/assets/img/' + groupA[i-1].song.album.art);
+                $('.art[data-grid-id="'+i+'"] .wrapper.active p').text('@' + groupA[i-1].song.artist.twitter);
+                $('.art[data-grid-id="'+i+'"] .wrapper.active').data('loop', 'loop' + i);
             }
             for(var i=1; i<=3; i++){
-                $('.art[data-grid-id="'+(i+6)+'"] .wrapper img').attr('src', '/assets/img/' + groupC[i-1].song.album.art);
-                $('.art[data-grid-id="'+(i+6)+'"] .wrapper p').text('@' + groupC[i-1].song.artist.twitter);
-                $('.art[data-grid-id="'+(i+6)+'"]').data('loop', 'loop' + (i+6));
+                $('.art[data-grid-id="'+(i+6)+'"] .wrapper.active img').attr('src', '/assets/img/' + groupB[i-1].song.album.art);
+                $('.art[data-grid-id="'+(i+6)+'"] .wrapper.active p').text('@' + groupB[i-1].song.artist.twitter);
+                $('.art[data-grid-id="'+(i+6)+'"] .wrapper.active').data('loop', 'loop' + (i+6));
             }
         }
         chooseLoops();
@@ -100,6 +106,10 @@
 
         loadImages();
 
+        var switchQueue = new Array(9);
+        for (var i = 0; i < switchQueue.length; ++i) { switchQueue[i] = false; }
+        var hasFlipped = new Array(9);
+        for (var i = 0; i < switchQueue.length; ++i) { switchQueue[i] = false; }
         this.listLength = 9;
         this.cued_loops = 0;
         this.loops = [];
@@ -180,6 +190,60 @@
 
             this.load_buffer();
         }
+
+        function prepareSwitch(grid_id, loop){
+            $('.art[data-grid-id="'+grid_id+'"] .wrapper:not(.active)').data('loop', loop.name);
+            $('.art[data-grid-id="'+grid_id+'"] .wrapper:not(.active) img').attr('src', '/assets/img/' +loop.song.album.art);
+            $('.art[data-grid-id="'+grid_id+'"] .wrapper:not(.active) p').text('@' + loop.song.artist.twitter);
+        }
+
+        function performSwitch(grid_id){
+            if(!$('.art[data-grid-id="'+grid_id+'"]').hasClass('active')){
+                $('.art[data-grid-id="'+grid_id+'"] .wrapper').toggleClass('active');
+            }else{
+                switchQueue[grid_id-1] = true;
+            }
+        }
+
+        prepareSwitch(2, loopList.loop9);
+
+        function checkQueue(grid_id){
+            if(switchQueue[grid_id-1] === true){
+                switchQueue[grid_id-1] = false;
+                $('.art[data-grid-id="'+grid_id+'"] .wrapper').toggleClass('active');
+            }
+        }
+
+        function pickSwitch(){
+            var rand = Math.round(Math.random() * 9) + 1;
+            if(hasFlipped[rand-1]){
+                for(i=rand;i<hasFlipped.length;i++){
+                    if(!hasFlipped[i]){
+                        hasFlipped[i] = true;
+                        return i;
+                    }
+                }
+                for(i=0;i<rand;i++){
+                    if(!hasFlipped[i]){
+                        hasFlipped[i] = true;
+                        return i;
+                    }
+                }
+                for(i=0;i<hasFlipped.length;i++){hasFlipped[i] = false}
+                return rand;
+            }
+        }
+
+        (function switchLoop(){
+            var timeout = Math.round(Math.random() * 70) + 21; //20-90
+            setTimeout(function() {
+                var grid_id = pickSwitch();
+                if()
+                prepareSwitch(grid_id);
+                switchLoop();
+            }, timeout);
+        }());
+
 
         //$('.art[data-grid-id="5"] .wrapper').toggleClass('active');
 	});

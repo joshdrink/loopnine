@@ -330,43 +330,51 @@ song = {
 
 loopList = {
     loop1: {
+        name: 'loop1',
         song: song.henri,
         url: '1-1.wav'
     },
     loop2: {
+        name: 'loop2',
         song: song.blackIsTheColour,
         url: '2-4.wav'
     },
     loop3: {
+        name: 'loop3',
         song: song.graceComeBack,
         url: '3-2.wav'
     },
     loop4: {
+        name: 'loop4',
         song: song.dayIWasBorn,
         url: '4-1.wav'
     },
     loop5: {
+        name: 'loop5',
         song: song.doItAllAgain,
         url: '5-1.wav'
     },
     loop6: {
+        name: 'loop6',
         song: song.hands,
         url: '6-4.wav'
     },
     loop7: {
+        name: 'loop7',
         song: song.mineForTheSummertime,
         url: '7-1.wav'
     },
     loop8: {
+        name: 'loop8',
         song: song.moveYourFeet,
         url: '8-4.wav'
     },
     loop9: {
+        name: 'loop9',
         song: song.nightmare,
         url: '9-1.wav'
     }
 }
 
 groupA = [loopList.loop1, loopList.loop2, loopList.loop3, loopList.loop4, loopList.loop5, loopList.loop6];
-
-groupC = [loopList.loop7, loopList.loop8, loopList.loop9];
+groupB = [loopList.loop7, loopList.loop8, loopList.loop9];
