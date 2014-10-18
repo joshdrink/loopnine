@@ -379,7 +379,71 @@ loopList = {
         song: song.nightmare,
         url: 'bloody_diamonds-nightmare-keys'
     },
-
+    wantToBelieveDrums3: {
+        name: 'wantToBelieveDrums3',
+        song: song.wantToBelieve,
+        url: 'rich_aucoin-want_to_believe_drums_3.wav'
+    }
+    wantToBelieveDrums2: {
+        name: 'wantToBelieveDrums2',
+        song: song.wantToBelieve,
+        url: 'rich_aucoin-want_to_believe_drums_2.wav'
+    }
+    wantToBelieveDrums: {
+        name: 'wantToBelieveDrums',
+        song: song.wantToBelieve,
+        url: 'rich_aucoin-want_to_believe_drums.wav'
+    }
+    summertimeWinSynth: {
+        name: 'summertimeWinSynth',
+        song: song.summertimeWin,
+        url: 'quake_matthews-summertime_win-synth.wav'
+    }
+    summertimeWinDrums: {
+        name: 'summertimeWinDrums',
+        song: song.summertimeWin,
+        url: 'quake_matthews-summertime_win-drums.wav'
+    }
+    henriAccordion: {
+        name: 'henriAccordion',
+        song: song.henri,
+        url: 'mary_beth_de_scene-henri-accordion.wav'
+    }
+    handsDrums: {
+        name: 'handsDrums',
+        song: song.hands,
+        url: 'like_a_motorcycle-hands-drums.wav'
+    }
+    handsBass: {
+        name: 'handsBass',
+        song: song.hands,
+        url: 'like_a_motorcycle-hands-bass.wav'
+    }
+    mineForTheSummertimeSynth: {
+        name: 'mineForTheSummertimeSynth',
+        song: song.mineForTheSummertime,
+        url: 'kyle_mischiek-mine_for_the_summertime-synth.wav'
+    }
+    mineForTheSummertimeDrums: {
+        name: 'mineForTheSummertimeDrums',
+        song: song.mineForTheSummertime,
+        url: 'kyle_mischiek-mine_for_the_summertime-drums.wav'
+    }
+    redSandGuitar: {
+        name: 'redSandGuitar',
+        song: song.redSand,
+        url: 'kuato-red_sand-guitar.wav'
+    }
+    redSandDrums2: {
+        name: 'redSandDrums2',
+        song: song.redSand,
+        url: 'kuato-red_sand-drums_2.wav'
+    }
+    redSandDrums: {
+        name: 'redSandDrums',
+        song: song.redSand,
+        url: 'kuato-red_sand-drums.wav'
+    }
 }
 
 //groupA = [loopList.loop1, loopList.loop2, loopList.loop3, loopList.loop4, loopList.loop5, loopList.loop6, loopList.loop11];
