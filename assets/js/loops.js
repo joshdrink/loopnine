@@ -2,12 +2,6 @@ album = {
     aaWallace: {
         name: 'unreleased',
         art: '',
-        songs: [
-            song.vltGirls
-        ],
-        artists: [
-            artist.aaWallace
-        ]
     },
     aatwlwm: {
         name: '',
@@ -16,173 +10,70 @@ album = {
     thePhantomMoves: {
         name: 'The Phantom Moves',
         art: 'Alert The Medic.jpg',
-        songs: [
-            song.graceComeBack
-        ],
-        artists: [
-            artist.alertTheMedic
-        ]
     },
     soLongAtTheFair: {
         name: 'So Long At The Fair',
         art: 'Anne Janelle.jpg',
-        songs: [
-            song.blackIsTheColour
-        ],
-        artists: [
-            artist.annaJanelle
-        ]
     },
     nightmareSingle: {
         name: 'Nightmare (Single)',
         art: 'Bloody Diamonds.jpg',
-        songs: [
-            song.nightmare
-        ],
-        artists: [
-            artist.bloodyDiamonds
-        ]
     },
     cannon: {
         name: 'Cannon',
         art: 'Cam Smith.jpg',
-        songs: [
-            song.feelTheSame
-        ],
-        artists: [
-            artist.camSmith
-        ]
     },
     youngBlood: {
         name: 'Young Blood',
         art: 'Chris Martin.jpg',
-        songs: [
-            song.strongIntuition
-        ],
-        artists: [
-            artist.chrisMartinTrio
-        ]
     },
     doItAllAgainSingle: {
         name: 'Do It All Again (Single)',
         art: 'Dylan Guthro.jpg',
-        songs: [
-            song.doItAllAgain
-        ],
-        artists: [
-            artist.dylanGuthro
-        ]
     },
     brokenDownHorse: {
         name: 'Broken Down Horse',
         art: 'E.B. Anderson.jpg',
-        songs: [
-            song.moveYourFeet
-        ],
-        artists: [
-            artist.ebAnderson
-        ]
     },
     soLongEP: {
         name: 'So Long EP',
         art: 'Glory Glory.jpg',
-        songs: [
-            song.takeMyTime,
-            song.indigoSon
-        ],
-        artists: [
-            artist.gloryGlory
-        ]
     },
     conversationalist: {
         name: 'Conversationalist',
         art: 'In-Flight Safety.jpg',
-        songs: [
-            song.stockholm
-        ],
-        artists: [
-            artist.inFlightSafety
-        ]
     },
     decisions: {
         name: 'Act II: Decisions',
         art: 'Jessie Brown.jpg',
-        songs: [
-            song.spite
-        ],
-        artists: [
-            artist.jessieBrown
-        ]
     },
     theGreatUpheavel: {
         name: 'The Great Upheavel',
         art: '',
-        songs: [
-            song.redSand
-        ],
-        artists: [
-            artist.kuato
-        ]
     },
     handsSingle: {
         name: 'Hands (Single)',
         art: 'Like A Motorcycle.jpg',
-        songs: [
-            song.hands
-        ],
-        artists: [
-            artist.likeAMotorcycle
-        ]
     },
     yourLastWar: {
         name: 'Your Last War',
         art: 'Heather Green.jpg',
-        songs: [
-            song.dayIWasBorn
-        ],
-        artists: [
-            artist.heatherGreen
-        ]
     },
     mineForTheSummertimeSingle: {
         name: 'Mine For The Summertime',
         art: 'Kyle Mischiek.jpg',
-        songs: [
-            song.mineForTheSummertime
-        ],
-        artists: [
-            artist.kyleMischiek
-        ]
     },
     maryBethDeSceneAlbum:{
         name: 'Mary Beth de Scène',
         art: 'Mary Beth de Scène.JPG',
-        songs: [
-            song.henri
-        ],
-        artists: [
-            artist.maryBethDeScene
-        ]
     },
     summertimeWinSingle:{
         name: 'Summertime Win (Single)',
         art: 'Quake Matthews.jpg',
-        songs: [
-            song.summertimeWin
-        ],
-        artists: [
-            artist.quake
-        ]
     },
     ephemeral: {
         name: 'Ephemeral',
         art: 'Rich Aucoin.jpg',
-        songs: [
-            song.wantToBelieve
-        ],
-        artists: [
-            artist.richAucoin
-        ]
     }
 };
 artist = {
@@ -342,7 +233,7 @@ artist = {
 song = {
     vltGirls: {
         name: 'VLT Girls',
-        album: album.aaWallace
+        album: album.aaWallace,
     },
     graceComeBack: {
         name: 'Grace Come Back',
@@ -417,3 +308,37 @@ song = {
         album: album.ephemeral
     }
 };
+
+loop = {
+    loop1: {
+        song: song.henri
+    },
+    loop2: {
+        song: song.blackIsTheColour
+    },
+    loop3: {
+        song: song.graceComeBack
+    },
+    loop4: {
+        song: song.dayIWasBorn
+    },
+    loop5: {
+        song: song.doItAllAgain
+    },
+    loop6: {
+        song: song.hands
+    },
+    loop7: {
+        song: song.mineForTheSummertime
+    },
+    loop8: {
+        song: song.moveYourFeet
+    },
+    loop9: {
+        song: song.nightmare
+    }
+}
+
+groupA = [loop.loop1, loop.loop2, loop.loop3, loop.loop4, loop.loop5, loop.loop6];
+
+groupC = [loop.loop7, loop.loop8, loop.loop9];
