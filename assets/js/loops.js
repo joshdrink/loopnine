@@ -87,7 +87,7 @@ artist = {
     },
     aatwlwm: {
         name: 'And All That Were Left Were Monsters',
-        twitter: 'aatwlwm',
+        twitter: 'AATWLWM',
         web: 'andallthatwereleftweremonsters.com',
         albums: [
             album.aatwlwm
@@ -103,7 +103,7 @@ artist = {
     },
     annaJanelle: {
         name: 'Anne Janelle',
-        twitter: 'annEjanelleMus',
+        twitter: 'AnneJanelleMus',
         web: 'www.annejanelle.com',
         albums: [
             album.soLongAtTheFair
