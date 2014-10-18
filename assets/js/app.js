@@ -35,33 +35,32 @@
         }*/
 
         $('.art').on('click', function(e){
-            parent = $(e.target).parent('.art');
+            parent = $(e.target).closest('.art');
            if(parent.hasClass('active'))
-                deactivate(parent.attr('id'));
+                deactivate(parent.data("grid-id"));
             else
-                activate(parent.attr('id'));
+                activate(parent.data("grid-id"));
         });
 
         function activate(num){
-            $('#' + num).addClass('active');
+            $('.art[data-grid-id="'+num+'"]').addClass('active');
         }
 
         function deactivate(num) {
             abs = Math.abs(num);
-            $('#' + abs).removeClass('active');
+            $('.art[data-grid-id="'+abs+'"]').removeClass('active');
         }
 
         function chooseLoops(){
-            for(i=1; i<6; i++){
-                var block = $('.art[data-grid-id="'+i+'"] .wrapper img').attr('src', '/assets/img/' + groupA[i].song.album.art);
+            for(var i=1; i<=6; i++){
+                $('.art[data-grid-id="'+i+'"] .wrapper img').attr('src', '/assets/img/' + groupA[i-1].song.album.art);
+                $('.art[data-grid-id="'+i+'"] .wrapper p').text('@' + groupA[i-1].song.artist.twitter);
             }
-            for(i=1; i<3; i++){
-                var block = $('.art[data-grid-id="'+(i+6)+'"]').first('.wrapper');
-                block.first('img').attr('src', '/assets/img/' + groupC[i].song.album.art);
+            for(var i=1; i<=3; i++){
+                $('.art[data-grid-id="'+(i+6)+'"] .wrapper img').attr('src', '/assets/img/' + groupC[i-1].song.album.art);
+                $('.art[data-grid-id="'+(i+6)+'"] .wrapper p').text('@' + groupC[i-1].song.artist.twitter);
             }
         }
-
-        console.log("Working");
         chooseLoops();
 
 	});

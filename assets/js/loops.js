@@ -57,7 +57,7 @@ album = {
     },
     yourLastWar: {
         name: 'Your Last War',
-        art: 'Heather Green.jpg',
+        art: 'Heather Green.png',
     },
     mineForTheSummertimeSingle: {
         name: 'Mine For The Summertime',
@@ -95,7 +95,7 @@ artist = {
     },
     alertTheMedic: {
         name: 'Alert The Medic',
-        twitter: 'alertthemedia',
+        twitter: 'alertthemedic',
         web: 'www.alertthemedic.com',
         albums: [
             album.thePhantomMoves
@@ -234,78 +234,97 @@ song = {
     vltGirls: {
         name: 'VLT Girls',
         album: album.aaWallace,
+        artist: artist.aaWallace
     },
     graceComeBack: {
         name: 'Grace Come Back',
-        album: album.thePhantomMoves
+        album: album.thePhantomMoves,
+        artist: artist.aatwlwm
     },
     blackIsTheColour: {
         name: 'Black Is The Colour',
-        album: album.soLongAtTheFair
+        album: album.soLongAtTheFair,
+        artist: artist.alertTheMedic
     },
     nightmare: {
         name: 'Nightmare',
-        album: album.nightmareSingle
+        album: album.nightmareSingle,
+        artist: artist.bloodyDiamonds
     },
     feelTheSame: {
         name: 'Feel The Same',
-        album: album.cannon
+        album: album.cannon,
+        artist: artist.camSmith
     },
     strongIntuition: {
         name: 'Strong Intuition',
-        album: album.youngBlood
+        album: album.youngBlood,
+        artist: artist.chrisMartinTrio
     },
     doItAllAgain: {
         name: 'Do It All Again',
-        album: album.doItAllAgainSingle
+        album: album.doItAllAgainSingle,
+        artist: artist.dylanGuthro
     },
     moveYourFeet: {
         name: 'Move your Feet',
-        album: album.brokenDownHorse
+        album: album.brokenDownHorse,
+        artist: artist.ebAnderson
     },
     takeMyTime: {
         name: 'Take My Time',
-        album: album.soLongEP
+        album: album.soLongEP,
+        artist: artist.gloryGlory
     },
     indigoSon: {
         name: 'Indigo Son',
-        album: album.soLongEP
+        album: album.soLongEP,
+        artist: artist.gloryGlory
     },
     stockholm: {
         name: 'Stockholm',
-        album: album.conversationalist
+        album: album.conversationalist,
+        artist: artist.inFlightSafety
     },
     spite: {
         name: 'Spite',
-        album: album.decisions
+        album: album.decisions,
+        artist: artist.jessieBrown
     },
     redSand: {
         name: 'Red Sand',
-        album: album.theGreatUpheavel
+        album: album.theGreatUpheavel,
+        artist: artist.kuato
     },
     hands: {
         name: 'Hands',
-        album: album.handsSingle
+        album: album.handsSingle,
+        artist: artist.likeAMotorcycle
     },
     dayIWasBorn: {
         name: 'Day I Was Born',
-        album: album.yourLastWar
+        album: album.yourLastWar,
+        artist: artist.heatherGreen
     },
     mineForTheSummertime: {
         name: 'Mine For The Summertime',
-        album: album.mineForTheSummertimeSingle
+        album: album.mineForTheSummertimeSingle,
+        artist: artist.kyleMischiek
     },
     henri: {
         name: 'Henri',
-        album: album.maryBethDeSceneAlbum
+        album: album.maryBethDeSceneAlbum,
+        artist: artist.maryBethDeScene
     },
     summertimeWin: {
         name: 'Henri',
-        album: album.summertimeWinSingle
+        album: album.summertimeWinSingle,
+        artist: artist.quake
     },
     wantToBelieve: {
         name: 'Want to Believe',
-        album: album.ephemeral
+        album: album.ephemeral,
+        artist: artist.richAucoin
     }
 };
 
