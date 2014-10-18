@@ -63,7 +63,7 @@
             else
                 $('.art[data-grid-id="'+num+'"]').append("<img class='text' src='/assets/img/text_"+text+".png'>");
             $('.art[data-grid-id="'+num+'"]').addClass('active');
-            var l = $('.art[data-grid-id="'+num+'"] .wrapper.active').data('loop');
+            var l = $('.art[data-grid-id="'+num+'"] .wrapper.active').attr('data-loop');
             loopList[l].object.volume = 1;
             loopList[l].object.gainNode.gain.value = 1;
         }
@@ -72,7 +72,7 @@
             abs = Math.abs(num);
             $('.art[data-grid-id="'+abs+'"] .text').remove();
             $('.art[data-grid-id="'+abs+'"]').removeClass('active');
-            var l = $('.art[data-grid-id="'+abs+'"] .wrapper.active').data('loop');
+            var l = $('.art[data-grid-id="'+abs+'"] .wrapper.active').attr('data-loop');
             loopList[l].object.volume = 0;
             loopList[l].object.gainNode.gain.value = 0;
             checkQueue(abs);

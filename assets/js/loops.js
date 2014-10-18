@@ -1,7 +1,7 @@
 album = {
     aaWallace: {
         name: 'unreleased',
-        art: 'AAWalace3.jpeg'
+        art: 'AAWallace3.jpeg'
     },
     aatwlwm: {
         name: 'Volume One',
@@ -79,7 +79,7 @@ album = {
 artist = {
     aaWallace: {
         name: 'AA Wallace',
-        twitter: 'aantour',
+        twitter: 'aaontour',
         web: 'www.aawallace.xxx',
         albums: [
             album.aaWallace
@@ -87,7 +87,7 @@ artist = {
     },
     aatwlwm: {
         name: 'And All That Were Left Were Monsters',
-        twitter: 'aatwwm',
+        twitter: 'aatwlwm',
         web: 'andallthatwereleftweremonsters.com',
         albums: [
             album.aatwlwm
@@ -102,9 +102,9 @@ artist = {
         ]
     },
     annaJanelle: {
-        name: 'Anna Janelle',
-        twitter: 'annajanelleMus',
-        web: 'www.annajanelle.com',
+        name: 'Anne Janelle',
+        twitter: 'annEjanelleMus',
+        web: 'www.annejanelle.com',
         albums: [
             album.soLongAtTheFair
         ]
@@ -198,7 +198,7 @@ artist = {
         ]
     },
     kyleMischiek: {
-        name: 'Kyle Michiek',
+        name: 'Kyle Mischiek',
         twitter: 'KyleMischiek',
         web: 'kylemishiek.com',
         albums: [
@@ -350,7 +350,7 @@ loopList = {
         url: 'alert_the_medic-grace_come_back-drums.wav'
     },
     graceComeBackGuitar: {
-        name: 'graceComeBackSynth',
+        name: 'graceComeBackGuitar',
         song: song.graceComeBack,
         url: 'alert_the_medic-grace_come_back-guitar.wav'
     },
