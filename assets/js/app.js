@@ -79,15 +79,17 @@
         }
 
         function chooseLoops(){
-            for(var i=1; i<=6; i++){
-                $('.art[data-grid-id="'+i+'"] .wrapper.active img').attr('src', '/assets/img/' + groupA[i-1].song.album.art);
-                $('.art[data-grid-id="'+i+'"] .wrapper.active p').text('@' + groupA[i-1].song.artist.twitter);
-                $('.art[data-grid-id="'+i+'"] .wrapper.active').attr('data-loop', 'loop' + i);
+            for(var i=0; i<=6; i++){
+                var rand = Math.round(Math.random() * groupALength);
+                $('.art[data-grid-id="'+(i+1)+'"] .wrapper.active img').attr('src', '/assets/img/' + groupA[rand].song.album.art);
+                $('.art[data-grid-id="'+(i+1)+'"] .wrapper.active p').text('@' + groupA[rand].song.artist.twitter);
+                $('.art[data-grid-id="'+(i+1)+'"] .wrapper.active').attr('data-loop', groupA[rand].name);
             }
-            for(var i=1; i<=3; i++){
-                $('.art[data-grid-id="'+(i+6)+'"] .wrapper.active img').attr('src', '/assets/img/' + groupB[i-1].song.album.art);
-                $('.art[data-grid-id="'+(i+6)+'"] .wrapper.active p').text('@' + groupB[i-1].song.artist.twitter);
-                $('.art[data-grid-id="'+(i+6)+'"] .wrapper.active').attr('data-loop', 'loop' + (i+6));
+            for(var i=0; i<3; i++){
+                var rand = Math.round(Math.random() * groupBLength);
+                $('.art[data-grid-id="'+(i+7)+'"] .wrapper.active img').attr('src', '/assets/img/' + groupB[rand].song.album.art);
+                $('.art[data-grid-id="'+(i+7)+'"] .wrapper.active p').text('@' + groupB[rand].song.artist.twitter);
+                $('.art[data-grid-id="'+(i+7)+'"] .wrapper.active').attr('data-loop', groupB[rand].name);
             }
         }
         chooseLoops();
@@ -110,7 +112,7 @@
         for (var i = 0; i < switchQueue.length; ++i) { switchQueue[i] = false; }
         var hasFlipped = new Array(9);
         for (var i = 0; i < switchQueue.length; ++i) { switchQueue[i] = false; }
-        this.listLength = 11;
+        this.listLength = 40;
         this.cued_loops = 0;
         this.loops = [];
 
@@ -126,10 +128,11 @@
             __this.cued_loops++;
             console.log(__this.cued_loops);
             if(__this.cued_loops == __this.listLength){
-                for(var i = 0; i < __this.listLength; i++){
-                    console.log('playing');
-                    loopList['loop' + (i+1)].object.playSound();
-                }
+                $.each(loopList, function(){
+                    console.log("playing");
+                    this.object.playSound();
+                });
+                switchLoop();
             }
         });
 
@@ -154,7 +157,6 @@
                         _this.cue_sound();
                         console.log('loaded');
                     });
-
                 }
 
                 this.buffer_request.send();
@@ -267,8 +269,8 @@
             }
         }
 
-        (function switchLoop(){
-            var timeout = (Math.round(Math.random() * 10))*1000; //20-90
+        function switchLoop(){
+            var timeout = (Math.round(Math.random() * 70) + 20)*1000; //20-90
             console.log("setting Timeout " + timeout);
             setTimeout(function() {
                 var grid_id = pickSwitch();
@@ -281,8 +283,7 @@
                 }
                 switchLoop();
             }, timeout);
-        }());
-
+        };
 
         //$('.art[data-grid-id="5"] .wrapper').toggleClass('active');
 	});
