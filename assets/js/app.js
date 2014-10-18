@@ -82,12 +82,12 @@
             for(var i=1; i<=6; i++){
                 $('.art[data-grid-id="'+i+'"] .wrapper.active img').attr('src', '/assets/img/' + groupA[i-1].song.album.art);
                 $('.art[data-grid-id="'+i+'"] .wrapper.active p').text('@' + groupA[i-1].song.artist.twitter);
-                $('.art[data-grid-id="'+i+'"] .wrapper.active').data('loop', 'loop' + i);
+                $('.art[data-grid-id="'+i+'"] .wrapper.active').attr('data-loop', 'loop' + i);
             }
             for(var i=1; i<=3; i++){
                 $('.art[data-grid-id="'+(i+6)+'"] .wrapper.active img').attr('src', '/assets/img/' + groupB[i-1].song.album.art);
                 $('.art[data-grid-id="'+(i+6)+'"] .wrapper.active p').text('@' + groupB[i-1].song.artist.twitter);
-                $('.art[data-grid-id="'+(i+6)+'"] .wrapper.active').data('loop', 'loop' + (i+6));
+                $('.art[data-grid-id="'+(i+6)+'"] .wrapper.active').attr('data-loop', 'loop' + (i+6));
             }
         }
         chooseLoops();
@@ -192,7 +192,7 @@
         }
 
         function prepareSwitch(grid_id, loop){
-            $('.art[data-grid-id="'+grid_id+'"] .wrapper:not(.active)').data('loop', loop.name);
+            $('.art[data-grid-id="'+grid_id+'"] .wrapper:not(.active)').attr('data-loop', loop.name);
             $('.art[data-grid-id="'+grid_id+'"] .wrapper:not(.active) img').attr('src', '/assets/img/' +loop.song.album.art);
             $('.art[data-grid-id="'+grid_id+'"] .wrapper:not(.active) p').text('@' + loop.song.artist.twitter);
         }
@@ -232,54 +232,53 @@
                 for(i=0;i<hasFlipped.length;i++){hasFlipped[i] = false}
                 return rand;
             }
+            return rand;
         }
 
         function pickLoop(grid_id){
             if(grid_id < 7){
-                theLoop = Math.round(Math.random() * groupALength) +1;
-                if($('.wrapper[data-loop="'+groupA[theLoop].name+'"').length){
-                    for(i=theLoop;i<groupALength;i++){
-                        if(!$('.wrapper[data-loop="'+groupA[theLoop].name+'"').length){
-                            return groupA[i];
-                        }
+                rand = Math.round(Math.random() * groupALength);
+                for(i=rand;i<groupALength;i++){
+                    if(!$('.wrapper.active[data-loop="'+groupA[i].name+'"]').length){
+                        return groupA[i];
                     }
-                    for(i=0;i<theLoop;i++){
-                        if(!$('.wrapper[data-loop="'+groupA[theLoop].name+'"').length){
-                            return groupA[i];
-                        }
+                    console.log(i + 'is in use');
+                }
+                for(i=0;i<rand;i++){
+                    if(!$('.wrapper.active[data-loop="'+groupA[i].name+'"]').length){
+                        return groupA[i];
                     }
-                }else{
-                    return groupA[theLoop];
+                    console.log(i + 'is in use');
                 }
             }else{
-                theLoop = Math.round(Math.random() * groupBLength) +1;
-                if($('.wrapper[data-loop="'+groupB[theLoop].name+'"').length){
-                    for(i=theLoop;i<groupBLength;i++){
-                        if(!$('.wrapper[data-loop="'+groupB[theLoop].name+'"').length){
-                            return groupB[i];
-                        }
+                rand = Math.round(Math.random() * groupBLength);
+                for(i=rand;i<groupBLength;i++){
+                    if(!$('.wrapper[data-loop="'+groupB[i].name+'"]').length){
+                        return groupB[i];
                     }
-                    for(i=0;i<theLoop;i++){
-                        if(!$('.wrapper[data-loop="'+groupB[theLoop].name+'"').length){
-                            return groupB[i];
-                        }
+                    console.log(i + 'is in use');
+                }
+                for(i=0;i<rand;i++){
+                    if(!$('.wrapper.active[data-loop="'+groupB[i].name+'"]').length){
+                        return groupB[i];
                     }
-                }else{
-                    return groupB[theLoop];
+                    console.log(i + 'is in use');
                 }
             }
         }
 
         (function switchLoop(){
-            var timeout = (Math.round(Math.random() * 70) + 21)*1000; //20-90
+            var timeout = (Math.round(Math.random() * 10))*1000; //20-90
             console.log("setting Timeout " + timeout);
             setTimeout(function() {
                 var grid_id = pickSwitch();
                 var theLoop = pickLoop(grid_id);
-
-                prepareSwitch(grid_id, theLoop);
-                performSwitch(grid_id);
-                console.log("Switching " + grid_id + " to " + theLoop.name);
+                if(theLoop != undefined) {
+                    console.log(grid_id + " " + theLoop);
+                    prepareSwitch(grid_id, theLoop);
+                    performSwitch(grid_id);
+                    console.log("Switching " + grid_id + " to " + theLoop.name);
+                }
                 switchLoop();
             }, timeout);
         }());

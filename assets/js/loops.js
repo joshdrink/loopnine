@@ -325,69 +325,65 @@ song = {
         name: 'Want to Believe',
         album: album.ephemeral,
         artist: artist.richAucoin
+    },
+    godComplex: {
+        name: 'God Complex',
+        album: album.aatwlwm,
+        artist: artist.aatwlwm
     }
 };
 
 loopList = {
-    loop1: {
-        name: 'loop1',
-        song: song.henri,
-        url: '1-1.wav'
+    vltSynth: {
+        name: 'vltSynth',
+        song: song.vltGirls,
+        url: 'aa_wallace-vlt_girls-synth.wav'
     },
-    loop2: {
-        name: 'loop2',
-        song: song.blackIsTheColour,
-        url: '2-4.wav'
+    vltDrums: {
+        name: 'vltDrums',
+        song: song.vltGirls,
+        url: 'aa_wallace-vlt_girls-drums.wav'
     },
-    loop3: {
-        name: 'loop3',
+    graceComeBackDrums: {
+        name: 'graceComeBackDrums',
         song: song.graceComeBack,
-        url: '3-2.wav'
+        url: 'alert_the_medic-grace_come_back-drums.wav'
     },
-    loop4: {
-        name: 'loop4',
-        song: song.dayIWasBorn,
-        url: '4-1.wav'
+    graceComeBackSynth: {
+        name: 'graceComeBackSynth',
+        song: song.graceComeBack,
+        url: 'alert_the_medic-grace_come_back-synth.wav'
     },
-    loop5: {
-        name: 'loop5',
-        song: song.doItAllAgain,
-        url: '5-1.wav'
+    godComplexDrums: {
+        name: 'godComplexDrums',
+        song: song.godComplex,
+        url: 'and_all_that_were_left_were_monsters-god_complex-drums.wav'
     },
-    loop6: {
-        name: 'loop6',
-        song: song.hands,
-        url: '6-4.wav'
+    godComplexSynth: {
+        name: 'godComplexSynth',
+        song: song.godComplex,
+        url: 'and_all_that_were_left_were_monsters-god_complex-drums.wav'
     },
-    loop7: {
-        name: 'loop7',
-        song: song.mineForTheSummertime,
-        url: '7-1.wav'
+    blackIsTheNewColourDrums: {
+        name: 'blackIsTheNewColourDrums',
+        song: song.blackIsTheColour,
+        url: 'anne_janelle-black_is_the_new_colour-drums.wav'
     },
-    loop8: {
-        name: 'loop8',
-        song: song.moveYourFeet,
-        url: '8-4.wav'
+    blackIsTheNewColourSynth:{
+        name: 'blackIsTheNewColourSynth',
+        song: song.blackIsTheColour,
+        url: 'anne_janelle-black_is_the_new_colour-drums.wav'
     },
-    loop9: {
-        name: 'loop9',
+    nightmareKeys: {
+        name: 'nightmareKeys',
         song: song.nightmare,
-        url: '9-1.wav'
+        url: 'bloody_diamonds-nightmare-keys'
     },
-    loop10:{
-        name: 'loop10',
-        song: song.wantToBelieve,
-        url: 'mns1.wav'
-    },
-    loop11:{
-        name: 'loop11',
-        song: song.strongIntuition,
-        url: 'mns2.wav'
-    }
+
 }
 
-groupA = [loopList.loop1, loopList.loop2, loopList.loop3, loopList.loop4, loopList.loop5, loopList.loop6, loopList.loop11];
-groupB = [loopList.loop7, loopList.loop8, loopList.loop9, loopList.loop10];
+//groupA = [loopList.loop1, loopList.loop2, loopList.loop3, loopList.loop4, loopList.loop5, loopList.loop6, loopList.loop11];
+//groupB = [loopList.loop7, loopList.loop8, loopList.loop9, loopList.loop10];
 
-groupALength = 6;
-groupBLength = 3;
+groupALength = 7;
+groupBLength = 4;
