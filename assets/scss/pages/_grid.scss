@@ -8,22 +8,31 @@
 	.nocturne {
 		background: $black;
 
+		>.shade {
+			background: rgba(0,0,0,.75);
+			height: 100vh;
+			width: 100vw;
+			z-index: 100;
+		}
+
 		.loader {
 			@include center;
 			height: 100px;
 			position: fixed;
-			width: auto;
+			width: 175px;
 			z-index: 100;
 
 			li {
-				background: rgb(237,200,78); /* Old browsers */
-				background: -moz-linear-gradient(top,  rgba(237,200,78,1) 0%, rgba(226,45,114,1) 99%); /* FF3.6+ */
-				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(237,200,78,1)), color-stop(99%,rgba(226,45,114,1))); /* Chrome,Safari4+ */
-				background: -webkit-linear-gradient(top,  rgba(237,200,78,1) 0%,rgba(226,45,114,1) 99%); /* Chrome10+,Safari5.1+ */
-				background: -o-linear-gradient(top,  rgba(237,200,78,1) 0%,rgba(226,45,114,1) 99%); /* Opera 11.10+ */
-				background: -ms-linear-gradient(top,  rgba(237,200,78,1) 0%,rgba(226,45,114,1) 99%); /* IE10+ */
-				background: linear-gradient(to bottom,  rgba(237,200,78,1) 0%,rgba(226,45,114,1) 99%); /* W3C */
-				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edc84e', endColorstr='#e22d72',GradientType=0 ); /* IE6-9 */
+				background: rgb(247,148,30); /* Old browsers */
+				background: -moz-linear-gradient(top,  rgba(247,148,30,1) 0%, rgba(217,53,107,1) 99%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(247,148,30,1)), color-stop(99%,rgba(217,53,107,1))); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top,  rgba(247,148,30,1) 0%,rgba(217,53,107,1) 99%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top,  rgba(247,148,30,1) 0%,rgba(217,53,107,1) 99%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(top,  rgba(247,148,30,1) 0%,rgba(217,53,107,1) 99%); /* IE10+ */
+				background: linear-gradient(to bottom,  rgba(247,148,30,1) 0%,rgba(217,53,107,1) 99%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7941e', endColorstr='#d9356b',GradientType=0 ); /* IE6-9 */
+
+				border-radius: 30px;
 				display: inline-block;
 				height: 100px;
 				position: absolute;

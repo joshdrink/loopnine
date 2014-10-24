@@ -5012,6 +5012,11 @@ a {
 
 .nocturne {
   background: #1e1e1e; }
+  .nocturne > .shade {
+    background: rgba(0, 0, 0, 0.75);
+    height: 100vh;
+    width: 100vw;
+    z-index: 100; }
   .nocturne .loader {
     position: relative;
     top: 50%;
@@ -5021,23 +5026,24 @@ a {
     transform: translate(-50%, -50%);
     height: 100px;
     position: fixed;
-    width: auto;
+    width: 175px;
     z-index: 100; }
     .nocturne .loader li {
-      background: #edc84e;
+      background: #f7941e;
       /* Old browsers */
       /* FF3.6+ */
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #edc84e), color-stop(99%, #e22d72));
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f7941e), color-stop(99%, #d9356b));
       /* Chrome,Safari4+ */
-      background: -webkit-linear-gradient(top, #edc84e 0%, #e22d72 99%);
+      background: -webkit-linear-gradient(top, #f7941e 0%, #d9356b 99%);
       /* Chrome10+,Safari5.1+ */
       /* Opera 11.10+ */
       /* IE10+ */
-      background: -webkit-gradient(linear, left top, left bottom, from(#edc84e), color-stop(99%, #e22d72));
-      background: linear-gradient(to bottom, #edc84e 0%, #e22d72 99%);
+      background: -webkit-gradient(linear, left top, left bottom, from(#f7941e), color-stop(99%, #d9356b));
+      background: linear-gradient(to bottom, #f7941e 0%, #d9356b 99%);
       /* W3C */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edc84e', endColorstr='#e22d72',GradientType=0 );
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7941e', endColorstr='#d9356b',GradientType=0 );
       /* IE6-9 */
+      border-radius: 30px;
       display: inline-block;
       height: 100px;
       position: absolute;
