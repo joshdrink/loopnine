@@ -16,6 +16,7 @@
 			text-align: center;
 
 			>img {
+				max-width: 300px;
 				position: absolute;
 					left: 50%;
 					bottom: 10%;
@@ -31,6 +32,10 @@
 			position: absolute;
 				top: 0;
 				right: 0;
+
+			.row {
+				max-width: none !important;
+			}
 
 			.art {
 				background: $magenta;

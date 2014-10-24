@@ -8,15 +8,53 @@
 
 	$(document).ready(function() {
 
-		var pageHeight = $(window).height();
-		var pageWidth = $(window).width();
+		function gridWidth() {
 
-		$('.grid').css('width', pageHeight + "px");
-		$('.menu').css('width', pageWidth - pageHeight + "px");
+			var pageHeight = $(window).height();
+			var pageWidth = $(window).width();
 
-		var boxWidth = $('.art').width();
+			$('.grid').css('width', pageHeight + "px");
+			$('.menu').css('width', pageWidth - pageHeight + "px");
 
-		$('.row').css('height', boxWidth + "px");
+			var boxWidth = $('.art').width();
+
+			$('.row').css('height', boxWidth + "px");
+
+		}
+
+		$(function() {
+			setTimeout(gridWidth, 20);
+			$(window).resize(gridWidth);
+		});
+
+
+		function square(target) {
+
+			var boxwidth = $(target).width();
+			var findPadding = parseInt(jQuery(target).css('padding-left'), 10);
+
+			if(boxwidth > $(target).height()) {
+				$(target).css('height', boxwidth + findPadding+'px');
+			}
+
+			if(boxwidth < $(target).height()) {
+				$(target).css('height', boxwidth + findPadding+'px');
+			}
+
+		}
+
+		function squareMe() {
+
+			$('.col-square').each(function() {
+				square(this);
+			});
+
+		}
+
+		$(function() {
+			setTimeout(squareMe, 20);
+			$(window).resize(squareMe);
+		});
 
 
         //Web Sockets

@@ -46,23 +46,23 @@
 			position: relative;
 		}
 
-		// Adjust for higher res
-		.menu {
-			width: 15% !important;
-		}
-
-		.row {
-			max-width: none !important;
-		}
-
-		.grid {
-			width: 85% !important;
-
-			.row {
-				height: 33.33333vh !important;
-			}
-
-		}
+		// // Adjust for higher res
+		// .menu {
+		// 	width: 15% !important;
+		// }
+		//
+		// .row {
+		// 	max-width: none !important;
+		// }
+		//
+		// .grid {
+		// 	width: 85% !important;
+		//
+		// 	.row {
+		// 		height: 33.33333vh !important;
+		// 	}
+		//
+		// }
 
 	// Positioning
 		@mixin center {
