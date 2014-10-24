@@ -5011,7 +5011,8 @@ a {
       transition: opacity 0.3s ease, height 0s ease 0.3s; }
 
 .nocturne {
-  background: #1e1e1e; }
+  background: #1e1e1e;
+  overflow: hidden; }
   .nocturne > .shade {
     background: rgba(0, 0, 0, 0.75);
     height: 100vh;
@@ -5026,6 +5027,8 @@ a {
     transform: translate(-50%, -50%);
     height: 100px;
     position: fixed;
+    -webkit-transform: translateZ(1px);
+    transform: translateZ(1px);
     width: 175px;
     z-index: 100; }
     .nocturne .loader li {
@@ -5112,9 +5115,15 @@ a {
         -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
         transform: translateX(-50%);
-        opacity: 1;
+        color: white;
+        font-weight: 100;
         position: absolute;
-        bottom: 0%; }
+        bottom: 0;
+        opacity: 1;
+        text-align: center; }
+        .nocturne .grid .art p span {
+          color: orange;
+          display: block; }
       .nocturne .grid .art > img {
         z-index: -1; }
       .nocturne .grid .art .overlay {

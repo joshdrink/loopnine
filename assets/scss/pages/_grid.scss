@@ -7,6 +7,7 @@
 
 	.nocturne {
 		background: $black;
+		overflow: hidden;
 
 		>.shade {
 			background: rgba(0,0,0,.75);
@@ -19,6 +20,7 @@
 			@include center;
 			height: 100px;
 			position: fixed;
+			transform: translateZ(1px);
 			width: 175px;
 			z-index: 100;
 
@@ -106,9 +108,18 @@
 
 				p {
 					@include horcenter;
-					opacity: 1;
+					color: white;
+					font-weight: 100;
 					position: absolute;
-						bottom: 0%;
+						bottom: 0;
+					opacity: 1;
+					text-align: center;
+
+					span {
+						color: orange;
+						display: block;
+					}
+
 				}
 
 				>img {
