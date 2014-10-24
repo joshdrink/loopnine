@@ -1,47 +1,47 @@
 loopList = {
     1: {
-        text: 'Loop 1',
-        image: 'Glory Glory.jpg',
-        url: '1-1.wav'
+        text: 'In-Flight Safety',
+        image: 'In-Flight Safety.jpg',
+        url: 'in_flight_safety-stockholm-guitar.wav'
     },
     2: {
-        text: 'Loop 2',
+        text: 'Heather Green',
         image: 'Heather Green.png',
-        url: '2-4.wav'
+        url: 'heather_green-day_i_was_born-rhodes.wav'
     },
     3: {
-        text: 'Loop 3',
-        image: 'Alert The Medic.jpg',
-        url: '3-2.wav'
+        text: 'Dylan Guthro',
+        image: 'Dylan Guthro.jpg',
+        url: 'dylan_guthro-do_it_all_again-guitar.wav'
     },
     4: {
-        text: 'Loop 4',
-        image: 'Anne Janelle.jpg',
-        url: '4-1.wav'
+        text: 'AA Wallace',
+        image: 'AAWallace3.jpeg',
+        url: 'aa_wallace-vlt_girls-synth.wav'
     },
     5: {
-        text: 'Loop 5',
-        image: 'Bloody Diamonds.jpg',
-        url: '5-1.wav'
+        text: 'Quake Matthews',
+        image: 'Quake Matthews.jpg',
+        url: 'quake_matthews-summertime_win-synth.wav'
     },
     6: {
-        text: 'Loop 6',
-        image: 'Cam Smith.jpg',
-        url: '6-4.wav'
+        text: 'Mary Beth de Scène',
+        image: 'Mary Beth de Scène.JPG',
+        url: 'mary_beth_de_scene-henri-accordion.wav'
     },
     7: {
-        text: 'Loop 7',
-        image: 'Chris Martin.jpg',
-        url: '7-1.wav'
+        text: 'Rich Aucoin',
+        image: 'Rich Aucoin.jpg',
+        url: 'rich_aucoin-want_to_believe_drums_3.wav'
     },
     8: {
-        text: 'Loop 8',
-        image: 'Dylan Guthro.jpg',
-        url: '8-4.wav'
+        text: 'Alert The Medic',
+        image: 'Alert The Medic.jpg',
+        url: 'alert_the_medic-grace_come_back-drums.wav'
     },
     9: {
-        text: 'Loop 9',
-        image: 'E.B. Anderson.jpg',
-        url: '9-1.wav'
+        text: 'Glory Glory',
+        image: 'Glory Glory.jpg',
+        url: 'glory_glory-indigo_son-drums.wav'
     }
 }
