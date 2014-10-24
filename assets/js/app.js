@@ -116,7 +116,7 @@
         function chooseLoops(){
             for(var i=1; i<10; i++){
                 $('.art[data-grid-id="'+i+'"] .wrapper img').attr('src', '/assets/img/' + loopList[i].image);
-                $('.art[data-grid-id="'+i+'"] .wrapper p').text(loopList[i].text);
+                $('.art[data-grid-id="'+i+'"] .wrapper p').text(loopList[i].text).append($('<span></span>').text(loopList[i].song).addClass('song-text'));
                 $('.art[data-grid-id="'+i+'"]').data('loop', loopList[i].loopname);
             }
         }
