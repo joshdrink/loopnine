@@ -89,6 +89,11 @@
                 activate(parent.data("grid-id"));
         });
 
+        function hideLoader(){
+            if(loaded == 2)
+                $('.loader, .shade').hide();
+        }
+
         function activate(num){
             text = Math.floor(Math.random() * 26) + 1;
             if(text < 10)
@@ -117,16 +122,36 @@
         }
         chooseLoops();
 
+        var loaded = 0;
+
         function loadImages(){
-            $.each(loopList, function(){
-                $('<img/>')[0].src = '/assets/img/' + this.image;
-            });
             for(i=1;i<27;i++){
                 if(i<10)
                     $('<img/>')[0].src = '/assets/img/text_0' + i + '.png';
                 else
                     $('<img/>')[0].src = '/assets/img/text_' + i + '.png';
             }
+            totalImages = $('img').length;
+            loadedImages = 0;
+            $('img').each(function(){
+                if(this.complete) {
+                    loadedImages++;
+                    if(loadedImages == totalImages) {
+                        loaded++;
+                        hideLoader();
+                    }
+
+                }else{
+                    $(this).one('load', function(){
+                        loadedImages++;
+                        if(loadedImages == totalImages) {
+                            loaded++;
+                            hideLoader();
+                        }
+                    });
+                }
+            });
+
         }
 
         loadImages();
@@ -147,6 +172,8 @@
                 for(var i = 1; i < 10; i++){
                     loopList[i].object.playSound();
                 }
+                loaded++;
+                hideLoader();
             }
         });
 
