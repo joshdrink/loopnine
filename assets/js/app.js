@@ -58,37 +58,30 @@
             else
                 $('.art[data-grid-id="'+num+'"]').append("<img class='text' src='/assets/img/text_"+text+".png'>");
             $('.art[data-grid-id="'+num+'"]').addClass('active');
-            var l = $('.art[data-grid-id="'+num+'"]').data('loop');
-            loopList[l].object.volume = 1;
-            loopList[l].object.gainNode.gain.value = 1;
+            loopList[num].object.volume = 0.5;
+            loopList[num].object.gainNode.gain.value = 0.5;
         }
 
         function deactivate(num) {
             abs = Math.abs(num);
             $('.art[data-grid-id="'+abs+'"] .text').remove();
             $('.art[data-grid-id="'+abs+'"]').removeClass('active');
-            var l = $('.art[data-grid-id="'+abs+'"]').data('loop');
-            loopList[l].object.volume = 0;
-            loopList[l].object.gainNode.gain.value = 0;
+            loopList[num].object.volume = 0;
+            loopList[num].object.gainNode.gain.value = 0;
         }
 
         function chooseLoops(){
-            for(var i=1; i<=6; i++){
-                $('.art[data-grid-id="'+i+'"] .wrapper img').attr('src', '/assets/img/' + groupA[i-1].song.album.art);
-                $('.art[data-grid-id="'+i+'"] .wrapper p').text('@' + groupA[i-1].song.artist.twitter);
-                $('.art[data-grid-id="'+i+'"]').data('loop', 'loop' + i);
-            }
-            for(var i=1; i<=3; i++){
-                $('.art[data-grid-id="'+(i+6)+'"] .wrapper img').attr('src', '/assets/img/' + groupC[i-1].song.album.art);
-                $('.art[data-grid-id="'+(i+6)+'"] .wrapper p').text('@' + groupC[i-1].song.artist.twitter);
-                $('.art[data-grid-id="'+(i+6)+'"]').data('loop', 'loop' + (i+6));
+            for(var i=1; i<10; i++){
+                $('.art[data-grid-id="'+i+'"] .wrapper img').attr('src', '/assets/img/' + loopList[i].image);
+                $('.art[data-grid-id="'+i+'"] .wrapper p').text(loopList[i].text);
+                $('.art[data-grid-id="'+i+'"]').data('loop', loopList[i].loopname);
             }
         }
         chooseLoops();
 
         function loadImages(){
-            $.each(album, function(){
-                $('<img/>')[0].src = '/assets/img/' + this.art;
+            $.each(loopList, function(){
+                $('<img/>')[0].src = '/assets/img/' + this.image;
             });
             for(i=1;i<27;i++){
                 if(i<10)
@@ -100,7 +93,6 @@
 
         loadImages();
 
-        this.listLength = 9;
         this.cued_loops = 0;
         this.loops = [];
 
@@ -112,13 +104,10 @@
         __this = this;
 
         window.addEventListener('loop_cued', function(e){
-            console.log('loop_cued');
             __this.cued_loops++;
-            console.log(__this.cued_loops);
-            if(__this.cued_loops == __this.listLength){
-                for(var i = 0; i < __this.listLength; i++){
-                    console.log('playing');
-                    loopList['loop' + (i+1)].object.playSound();
+            if(__this.cued_loops == 9){
+                for(var i = 1; i < 10; i++){
+                    loopList[i].object.playSound();
                 }
             }
         });
