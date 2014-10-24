@@ -5012,7 +5012,7 @@ a {
 
 .nocturne {
   background: #1e1e1e; }
-  .nocturne > .wrapper {
+  .nocturne > .shade {
     background: rgba(0, 0, 0, 0.75);
     height: 100vh;
     width: 100vw;
